@@ -16,7 +16,13 @@
   </head>
   <body>
     <nav>
-      <ul>
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+
+        <span></span> // c est pour creer les 3 barres du menu hamburger
+        <span></span>
+        <span></span>
+      </button>
+      <ul id="navMenu">
         <li>
           <a href="" class="logo"
             ><h3>
@@ -64,8 +70,8 @@
       </h1>
       <p class="sub-title">
         Your journey to a <span>stronger body </span>and
-        <span>mind</span> starts <span>here</span>
-        <span>N</span>ow or <span>N</span>ever <span>!</span>
+        <span>mind</span> starts <span>here</span> <span>N</span>ow or
+        <span>N</span>ever <span>!</span>
       </p>
       <div class="btn">
         <a href="#" class="btn-start">Join Now</a>
@@ -130,7 +136,7 @@
       <span>W</span>elcome &<span>W</span>hy <span>U</span>s <span>?</span>
     </h1>
     <section class="welcome">
-      <p>
+      <p class="translat">
         <span>W</span>elcome to the website Intense Gym! We hope that you will
         appreciate our services and opportunities we offer our loyal and
         potential customers. <span>A</span>t Intense Gym, we pride ourselves on
@@ -139,7 +145,7 @@
       </p>
     </section>
     <section class="why_us">
-      <div class="whyUS us1">
+      <div class="whyUS flip">
         <img src="coach.jpg" class="whyusimg" alt="" />
         <h2>Calified coaches</h2>
         <p>
@@ -147,7 +153,7 @@
           expertise to help you reach your fitness goals safely and effectively.
         </p>
       </div>
-      <div class="whyUS us2">
+      <div class="whyUS flip">
         <img src="materials.jpg" class="whyusimg" alt="" />
         <h2>State-of-the-art equipment</h2>
         <p>
@@ -155,7 +161,7 @@
           to provide you with the best workout experience possible.
         </p>
       </div>
-      <div class="whyUS us3">
+      <div class="whyUS flip">
         <img src="community.jpg" class="whyusimg" alt="" />
         <h2>Community and Support</h2>
         <p>
@@ -167,17 +173,17 @@
     </section>
     <h1><span>M</span>eet <span>O</span>ur <span>C</span>oaches</h1>
     <section class="coach">
-      <div class="coach-card">
+      <div class="coach-card translat">
         <img src="coach1.jpg" alt="" class="coaching" />
         <h2>John Doe</h2>
         <p>Strength and Conditioning Specialist</p>
       </div>
-      <div class="coach-card">
+      <div class="coach-card translat">
         <img src="coach3.jpg" alt="" class="coaching" />
         <h2>Adriana Smith</h2>
         <p>Yoga and Mindfulness Instructor</p>
       </div>
-      <div class="coach-card">
+      <div class="coach-card translat">
         <img src="coach2.jpg" alt="" class="coaching" />
         <h2>Mike Johnson</h2>
         <p>Cardio and Endurance Coach</p>
@@ -189,34 +195,6 @@
         </h2>
       </div> -->
     </section>
-    <script>
-      const video = document.getElementById("clip");
-      video.playbackRate = 0.5;
-
-      
-      const phrases = [
-        "<span>R</span>EDEFINE <span>Y</span>OUR <span>L</span>IMITS",
-        "<span>S</span>TRONGER <span>B</span>ODY, <span>S</span>HARPER <span>M</span>IND",
-        "<span>P</span>USH <span>Y</span>OUR <span>B</span>OUNDARIES",
-        "<span>T</span>RAIN <span>S</span>MART, <span>T</span>RAIN <span>I</span>NTENSE",
-        "<span>E</span>LEVATE <span>E</span>VERY <span>R</span>EP",
-      ];
-
-      const titleEl = document.getElementById("rotating-title");
-      let idx = 0;
-
-      function setPhrase(i) {
-        titleEl.classList.remove("typewriter");
-        void titleEl.offsetWidth; // reflow to restart animation
-        titleEl.innerHTML = phrases[i];
-        titleEl.classList.add("typewriter");
-      }
-
-      setPhrase(idx);
-      setInterval(() => {
-        idx = (idx + 1) % phrases.length;
-        setPhrase(idx);
-      }, 5000);
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>

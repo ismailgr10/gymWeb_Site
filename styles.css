@@ -45,6 +45,34 @@ nav li:first-child {
   margin-right: auto;
   margin-left: auto;
 }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1001;
+}
+
+.hamburger span {
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+#navMenu.show {
+  left: 0;
+}
+
 span {
   font-weight: bold;
   color: red;
@@ -294,7 +322,16 @@ p {
   transform: scale(1.05);
   border-color: red;
 }
-/* la partie de meet our coaches*/
+
+.flip {
+  transform: rotateX(90deg);
+  opacity: 0;
+  transition: 1s ease;
+}
+.flip.show {
+  transform: rotateX(0);
+  opacity: 1;
+}
 .coach {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -318,7 +355,7 @@ p {
   box-shadow: 0 8px 40px rgba(255, 0, 0, 0.8);
   border-color: red;
 }
-.coach-card{
+.coach-card {
   border: 2px solid transparent;
   border-radius: 15px;
   padding: 20px;
@@ -331,9 +368,80 @@ p {
   transition: transform 5s ease;
   box-shadow: 0 8px 40px rgba(255, 0, 0, 0.8);
 }
+.translat {
+  transform: translateX(-50px);
+  opacity: 0;
+  transition: 1s ease;
+}
+.translat.show {
+  transform: translateX(0);
+  opacity: 1;
+}
 
 
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+  /*adopte les elements de la page apres les changements des dimensions de l'ecran*/
 
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
+  nav ul {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.98);
+    width: 100%;
+    height: 100vh;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 100px;
+    transition: left 0.3s ease;
+    gap: 30px;
+    font-size: 24px;
+    margin-top: 0;
+  }
 
+  nav li:first-child {
+    position: fixed;
+    top: 10px;
+    left: 20px;
+    margin: 0;
+    z-index: 1000;
+  }
 
+  h1 {
+    font-size: 2.5em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  .sub-title {
+    font-size: 1.2rem;
+  }
+
+  .btn {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .why_us {
+    grid-template-columns: 1fr;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .coach {
+    grid-template-columns: 1fr;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
