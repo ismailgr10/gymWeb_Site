@@ -3,7 +3,7 @@ body{
     background-color: black;
     color: white;
     margin: 0;
-    background-image: url(/bodymap/images/salle.jpg);
+    background-image: url(../bodymap/images/salle.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
